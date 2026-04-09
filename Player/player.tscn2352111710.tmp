@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://bt7aj3874wix0" path="res://Player/Scripts/state_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://ck0n8y8ifv1g0" path="res://Player/Scripts/state_attack.gd" id="6_fhl08"]
 [ext_resource type="AudioStream" uid="uid://bfpt84sgp6dpr" path="res://Player/Audio/SwordSwoosh.wav" id="8_od3ui"]
-[ext_resource type="Script" uid="uid://rp5wtj5wbw2m" path="res://Player/Scripts/player_interaction_host.gd" id="10_apopc"]
 [ext_resource type="PackedScene" uid="uid://edsf823i751n" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="10_x3vf3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
@@ -426,11 +425,8 @@ _data = {
 &"walk_up": SubResource("Animation_od3ui")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x3vf3"]
-radius = 14.861448
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_apopc"]
-size = Vector2(39.75, 14)
+[sub_resource type="CircleShape2D" id="CircleShape2D_apopc"]
+radius = 20.0
 
 [node name="player" type="CharacterBody2D" unique_id=186296626]
 collision_mask = 16
@@ -487,21 +483,9 @@ decelerate_speed = 6.0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="audio" unique_id=62278673]
 max_polyphony = 4
 
-[node name="Interaction" type="Node2D" parent="." unique_id=1572610573]
-script = ExtResource("10_apopc")
-
-[node name="HurtBox" parent="Interaction" unique_id=245773622 instance=ExtResource("10_x3vf3")]
-position = Vector2(0, 16)
+[node name="HurtBox" parent="." unique_id=245773622 instance=ExtResource("10_x3vf3")]
 collision_mask = 256
-monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/HurtBox" unique_id=1802887850]
-position = Vector2(0, -3)
-scale = Vector2(1.3457639, -0.73721874)
-shape = SubResource("CircleShape2D_x3vf3")
-debug_color = Color(0.99974245, 0.12356009, 0.10542341, 0.41960785)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interaction/HurtBox" unique_id=913021643]
-position = Vector2(0, -9)
-shape = SubResource("RectangleShape2D_apopc")
-debug_color = Color(0.99974245, 0.12356009, 0.10542341, 0.41960785)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1802887850]
+shape = SubResource("CircleShape2D_apopc")
+debug_color = Color(0.9330729, 0, 0.031843305, 0.41960785)
