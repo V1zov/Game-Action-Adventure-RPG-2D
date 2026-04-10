@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://bt7aj3874wix0" path="res://Player/Scripts/state_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://ck0n8y8ifv1g0" path="res://Player/Scripts/state_attack.gd" id="6_fhl08"]
 [ext_resource type="AudioStream" uid="uid://bfpt84sgp6dpr" path="res://Player/Audio/SwordSwoosh.wav" id="8_od3ui"]
-[ext_resource type="Script" uid="uid://cm066bqmck8t3" path="res://Player/Scripts/playercamera.gd" id="10_5htga"]
 [ext_resource type="Script" uid="uid://rp5wtj5wbw2m" path="res://Player/Scripts/player_interaction_host.gd" id="10_apopc"]
 [ext_resource type="PackedScene" uid="uid://edsf823i751n" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="10_x3vf3"]
 
@@ -482,8 +481,6 @@ attack_sound = ExtResource("8_od3ui")
 decelerate_speed = 6.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1964919379]
-editor_draw_limits = true
-script = ExtResource("10_5htga")
 
 [node name="audio" type="Node2D" parent="." unique_id=1548932092]
 

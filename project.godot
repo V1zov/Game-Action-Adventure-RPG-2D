@@ -15,12 +15,16 @@ run/main_scene="uid://c00o5fajkqskb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LevelManager="*uid://b5ch8rnrpnl31"
+
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=270
 window/size/window_width_override=1024
-window/size/window_height_override=768
+window/size/window_height_override=786
 window/stretch/mode="viewport"
 
 [input]
